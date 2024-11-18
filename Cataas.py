@@ -11,7 +11,6 @@ def load_image(url):
         response = requests.get(url)
         response.raise_for_status()
         image_data = BytesIO(response.content)
-        image_data = BytesIO(response.content)
         img = Image.open(image_data)
         img.thumbnail((600,480), Image.Resampling.LANCZOS) # размер картинки
         return ImageTk.PhotoImage(img)
